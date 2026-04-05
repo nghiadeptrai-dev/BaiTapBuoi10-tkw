@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách sinh viên</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+  <style>
+    :root {
+      --pink: #f8d7e1;
+      --pink-soft: #fdecef;
+      --white: #fff;
+      --shadow: 0 10px 30px rgba(0,0,0,0.05);
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--pink-soft), white);
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 1200px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display';
+      color: #d63384;
+    }
+
+    .upload {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      background: var(--pink-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: var(--pink);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    tr:hover {
+      background: var(--pink-soft);
+      transition: 0.3s;
+    }
+
+    /* Mobile */
+    @media(max-width:768px){
+      table, thead, tbody, tr, td {
+        display: block;
+      }
+      thead { display: none; }
+      tr {
+        margin-bottom: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Danh sách sinh viên</h1>
+
+  <div class="upload">
+    <input type="file" id="fileInput">
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Mã SV</th>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>Khóa</th>
+        <th>Khoa</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
