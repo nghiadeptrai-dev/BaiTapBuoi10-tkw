@@ -34,10 +34,22 @@ class SinhVien {
   }
 
   getKhoa() {
-    let code = this.maSV.substring(2,5);
-    if(code === "a40") return "Công nghệ thông tin";
-    return "Khác";
-  }
+  let facultyCode = this.maSV.substring(3, 6);
+
+  let facultyMap = {
+    "404": "Công nghệ thông tin và Kinh tế số",
+    "408": "Khoa học dữ liệu",
+    "401": "Ngân hàng",
+    "403": "Quản trị kinh doanh",
+    "405": "Kinh doanh quốc tế",
+    "407": "Kinh tế",
+    "406": "Luật",
+    "751": "Ngoại ngữ",
+    "402": "Kế toán - Kiểm toán"
+  };
+
+  return facultyMap[facultyCode] || "Không xác định";
+}
 }
 
 
